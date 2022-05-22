@@ -1,0 +1,21 @@
+<section class="pdf-editor">
+    <div class="pdf-editor__subscription">
+        <div class="pdf-editor__title">
+            <h3>{{titlePage}}</h3>
+            <p>Document title</p>
+        </div>
+        <button class="pdf-editor__btn">
+            <fa-icon [icon]="faCloudDownload" size="lg"></fa-icon>
+            Download
+        </button>
+    </div>
+    <div class="pdf-editor__block">
+        <app-toolbar 
+            [iconArray]="toolbarIcon"
+            [iconSave]="true"></app-toolbar>
+        <div class="pdf-editor__document">
+
+        </div>
+        <app-page-pgination></app-page-pgination>
+    </div>
+</section>

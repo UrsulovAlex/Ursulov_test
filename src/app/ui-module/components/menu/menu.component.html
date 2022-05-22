@@ -1,0 +1,32 @@
+<ul class="menu"
+    [ngClass]="{'menu--header': menuHeader}"
+    *ngIf="data?.length"
+    (mouseleave)="hideMobHeaderMenu()">
+    <li class="menu__item"
+        [ngClass]="{
+            'menu__item--header': menuHeader,
+            'menu__item--select': menuHeader && selectMenu}"
+        *ngFor="let item of data; let i = index">
+        <ng-container *ngIf="getScreenWidth > 640; else mobTemplate">
+            <a [routerLink]="item?.url">{{item?.name}}</a>
+        </ng-container>
+        <ng-template #mobTemplate>
+            <div class="menu__sub-item">
+                <a [routerLink]="item?.url">{{item?.name}}</a>
+                <fa-icon 
+                    *ngIf="item?.subMenu?.length"
+                    [icon]="faChevronDown" size="xs"></fa-icon>
+            </div>
+        </ng-template>
+        <ng-container *ngIf="item?.subMenu?.length">
+            <ul class="menu--sub">
+                <li *ngFor="let subItem of item?.subMenu">
+                    <a [routerLink]="subItem?.url"
+                        (click)="hideMobHeaderMenu()">
+                        {{subItem?.name}}
+                    </a>
+                </li>
+            </ul>
+        </ng-container>
+    </li>
+</ul>

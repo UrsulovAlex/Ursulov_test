@@ -1,0 +1,16 @@
+<div class="toolbar">
+    <div class="toolbar__section" 
+        *ngIf="iconArray.length">
+        <button class="toolbar__btn" 
+            *ngFor="let icon of iconArray">
+            <fa-icon [icon]="icon" size="lg"></fa-icon>
+        </button>
+    </div>
+    <div class="toolbar__section"
+        *ngIf="iconSave">
+        <button class="toolbar__btn--save">
+            <fa-icon [icon]="faSave" size="lg"></fa-icon>
+        </button>
+    </div>
+</div>
+

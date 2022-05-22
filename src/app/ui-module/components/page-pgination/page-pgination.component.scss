@@ -1,0 +1,31 @@
+@import '../../../../assets/scss/variables';
+
+.pagination {
+    background: $light-gray;
+    padding: 12px;
+    border-top: 1px solid $main-select;
+    display: flex;
+    justify-content: center;
+
+    &__btn {
+        border: 0;
+        background: white;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        color: $main-select;
+    }
+
+    &__count {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $main-select;
+        font-size: 14px;
+        height: 40px;
+        width: 60px;
+        padding: 8px;
+        margin: 0 8px;
+        color: $main-select;
+    }
+}

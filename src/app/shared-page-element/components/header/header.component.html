@@ -1,0 +1,22 @@
+<header class="header">
+    <div class="header__logo"
+        [routerLink]="'/'">
+        <img src="../assets/images/aspose-logo.svg" alt="Aspose">
+    </div>
+    <div class="header__menu">
+        <button class="header__btn-menu"
+            (click)="showHideMobMenu()">
+            <span class="header__btn-line"></span>
+            <span class="header__btn-line"></span>
+            <span class="header__btn-line"></span>
+        </button>
+        <app-menu 
+            [ngClass] = "{'mob-menu__show': showMobMenu}"
+            [data] = 'menuData'
+            [menuHeader] = 'true'
+            (hideMobMenu)="hideMobMenu($event)"></app-menu>
+        </div>
+    <div class="header__account">
+        <fa-icon [icon]="faUser" size="lg"></fa-icon>
+    </div>
+</header>

@@ -1,0 +1,48 @@
+@import '../../../../assets/scss/variables';
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    border-bottom: 1px solid $main-select;
+
+    &__section {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__btn {
+        background: $light-gray;
+        border: 0;
+        padding: 4px;
+        margin-right: 4px;
+        margin-bottom: 0;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        color: $main-select;
+    }
+
+    &__btn--save {
+        background: $main-green;
+        border: 0;
+        color: $main-white;
+        width: 60px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+}
+
+@media screen and(max-width: 640px){
+    .toolbar {
+        padding-bottom: 0;
+
+        &__btn {
+            margin-right: 12px;
+            margin-bottom: 12px;
+        }
+    }
+}
