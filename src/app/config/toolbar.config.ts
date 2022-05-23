@@ -9,7 +9,8 @@ import {
 	faSearch, 
 	faImage,
 	faArrowLeftRotate,
-	faArrowRotateRight, 
+	faArrowRotateRight,
+	faFile, 
 	IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 export const arrayIcon: IconDefinition[] = [
@@ -25,3 +26,9 @@ export const arrayIcon: IconDefinition[] = [
 	faArrowLeftRotate,
 	faArrowRotateRight,
 ];
+
+export const arrayList:  IconDefinition[] = [
+	faFile,
+	faArrowLeftRotate,
+	faArrowRotateRight,
+]

@@ -9,13 +9,30 @@
             Download
         </button>
     </div>
-    <div class="pdf-editor__block">
+    <div class="pdf-editor__toolbar">
+        <app-toolbar class = "pdf-editor__toolbar-list"
+            [iconArray]="fileListIcon"
+            [iconSave]="false"></app-toolbar>
         <app-toolbar 
             [iconArray]="toolbarIcon"
             [iconSave]="true"></app-toolbar>
-        <div class="pdf-editor__document">
-
-        </div>
-        <app-page-pgination></app-page-pgination>
     </div>
+    <div class="pdf-editor__block">
+        <div class="pdf-editor__left-block">
+            <div class="pdf-editor__document">
+                <div class="pdf-editor__list">
+                    <fa-icon [icon]="faFilePdf" size="lg"></fa-icon>
+                </div>
+                <div class="pdf-editor__list">
+                    <fa-icon [icon]="faFilePdf" size="lg"></fa-icon>
+                </div>
+            </div>
+        </div>
+        <div class="pdf-editor__right-block">
+            <div class="pdf-editor__document">
+
+            </div>
+        </div>
+    </div>
+    <app-page-pgination></app-page-pgination>
 </section>

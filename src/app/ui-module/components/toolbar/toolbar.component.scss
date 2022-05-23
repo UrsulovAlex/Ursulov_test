@@ -3,7 +3,6 @@
 .toolbar {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 12px;
     border-bottom: 1px solid $main-select;
 
     &__section {
@@ -16,7 +15,7 @@
         border: 0;
         padding: 4px;
         margin-right: 4px;
-        margin-bottom: 0;
+        margin-bottom: 12px;
         width: 40px;
         height: 40px;
         cursor: pointer;
@@ -42,7 +41,6 @@
 
         &__btn {
             margin-right: 12px;
-            margin-bottom: 12px;
         }
     }
 }

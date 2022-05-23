@@ -33,9 +33,61 @@
         padding: 8px;
     }
 
+    &__toolbar,
+    &__block {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 16px
+    }
+
+    &__toolbar {
+        align-items: end;
+    }
+
     &__document {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin: 12px 0 0;
         height: 800px;
         background: $light-gray;
+    }
+
+    &__left-block {
+        width: 280px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__list {
+        width: 210px;
+        height: 297px;
+        background: $main-white;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        color: $main-blue;
+        margin-top: 12px;
+        cursor: pointer;
+    }
+
+    app-toolbar {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .pdf-editor {
+        &__block,
+        &__toolbar, {
+            grid-template-columns: 1fr;
+        }
+        
+        &__toolbar-list,
+        &__left-block {
+            display: none;
+        }
     }
 }

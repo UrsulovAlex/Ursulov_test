@@ -19,5 +19,4 @@ export class MainComponent implements OnInit {
 		this._route.data.subscribe(getTitle => {
             this.titlePage = getTitle['title']});
 	}
-
 }

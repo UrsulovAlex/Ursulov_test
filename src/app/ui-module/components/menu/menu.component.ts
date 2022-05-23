@@ -26,10 +26,9 @@ export class MenuComponent implements OnInit {
 	}
 
 	@HostListener('window:resize', ['$event'])
-	onWindowResize() {
+	onWindowResize(): void{
     	this.getScreenWidth = window.innerWidth;
   	}
-
 	
 	hideMobHeaderMenu(): void {
 		this.hideMobMenu.emit(false);
