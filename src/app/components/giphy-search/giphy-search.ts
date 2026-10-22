@@ -97,4 +97,12 @@ export class GiphySearch implements OnInit{
             console.error('Неможливо завантажити GIF:', error);
         }
     }
+
+    async copyLink(url: string): Promise<void> {
+        try {
+            await navigator.clipboard.writeText(url);
+        } catch (error) {
+            console.error('Не удалось скопировать ссылку:', error);
+        }
+    }
 }
