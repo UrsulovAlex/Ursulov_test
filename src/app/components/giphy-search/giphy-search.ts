@@ -102,7 +102,7 @@ export class GiphySearch implements OnInit{
         try {
             await navigator.clipboard.writeText(url);
         } catch (error) {
-            console.error('Не удалось скопировать ссылку:', error);
+            console.error('Неможливо скопіювати посилання:', error);
         }
     }
 }
