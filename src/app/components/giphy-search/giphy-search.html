@@ -30,7 +30,7 @@
                     <mat-card-content>
                         <p class="giphy__content">ID: <span>{{ gif.id }}</span></p>
 
-                        @if (gif.username) {
+                        @if (gif.user?.display_name ) {
                             <p class="giphy__content">Назва: <span>{{ gif.user?.display_name }}</span></p>
                         }
 
