@@ -20,7 +20,7 @@
         }
 
         <div class="giphy__grid">
-            @for (gif of gifs(); track gif.id) {
+            @for (gif of gifs(); track gif?.id) {
                 <mat-card>
                     <img
                         mat-card-image
@@ -31,7 +31,7 @@
                         <p class="giphy__content">ID: <span>{{ gif.id }}</span></p>
 
                         @if (gif.username) {
-                            <p class="giphy__content">Автор: <span>{{ gif.username }}</span></p>
+                            <p class="giphy__content">Назва: <span>{{ gif.user?.display_name }}</span></p>
                         }
 
                         @if (gif.rating) {
