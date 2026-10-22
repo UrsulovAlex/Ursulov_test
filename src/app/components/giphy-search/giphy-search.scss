@@ -1,0 +1,59 @@
+.giphy {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 16px;
+    position: relative;
+
+
+    &__container {
+        position: relative;
+    }
+
+    &__spinner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill,  minmax(200px, 1fr));
+        gap: 16px;
+        padding: 16px 0;
+    }
+
+    &__content{
+        margin-top: 4px;
+        margin-bottom: 0;
+
+        span {
+            color: gray;
+        }   
+    }
+
+    &__grid img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+}
+
+.form-field {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.mat-mdc-card-actions {
+    justify-content: space-between;
+}
+
+mat-card-actions {
+    margin-top: auto;
+}

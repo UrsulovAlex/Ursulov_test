@@ -1,0 +1,81 @@
+<section class="giphy">
+    <mat-form-field class="form-field">
+        <mat-label>Пошук GIFs</mat-label>
+        <input matInput type="text" [formControl]="searchControl" placeholder="Пошук GIFs" />
+        @if (searchControl.value) {
+            <button matSuffix matIconButton aria-label="Clear" (click)="searchControl.setValue('')">
+                <mat-icon>close</mat-icon>
+            </button>
+        }
+    </mat-form-field>
+    <div class="giphy__container">
+        @if (!loading()) {
+            <div class="giphy__spinner">
+                <mat-spinner></mat-spinner>
+            </div>
+        }
+
+        @if (error(); as message) {
+            <p role="alert">{{ message }}</p>
+        }
+
+        <div class="giphy__grid">
+            @for (gif of gifs(); track gif.id) {
+                <mat-card>
+                    <img
+                        mat-card-image
+                        [src]="gif.images.fixed_width.url"
+                        [alt]="gif.title || 'GIF'"
+                    />
+                    <mat-card-content>
+                        <p class="giphy__content">ID: <span>{{ gif.id }}</span></p>
+
+                        @if (gif.username) {
+                            <p class="giphy__content">Автор: <span>{{ gif.username }}</span></p>
+                        }
+
+                        @if (gif.rating) {
+                            <p class="giphy__content">Рейтинг: <span>{{ gif.rating }}</span></p>
+                        }
+                    </mat-card-content>
+
+                    <mat-card-actions>
+                        <a
+                            matIconButton
+                            matTooltip="Відкрити в новій вкладці"
+                            [matTooltipPosition]="'above'"
+                            matTooltipHideDelay="500"
+                            [href]="gif.images.original.url"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <mat-icon>link</mat-icon>
+                        </a>
+                        <button 
+                            matIconButton 
+                            type="button" 
+                            (click)="downloadGif(gif)" 
+                            matTooltip="Завантажити GIF" 
+                            [matTooltipPosition]="'above'" 
+                            matTooltipHideDelay="500">
+                            <mat-icon>cloud_download</mat-icon>
+                        </button>
+                    </mat-card-actions>
+                </mat-card>
+            } @empty {
+                @if (!loading() && !error()) {
+                    <p>GIF не знайдено.</p>
+                }
+            }
+        </div>
+    </div>  
+
+    <a
+        href="https://giphy.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Powered by GIPHY"
+    >
+        Powered By GIPHY
+    </a>
+</section>
